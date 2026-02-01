@@ -4,9 +4,12 @@ import argparse
 
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler("run.log", encoding="utf-8")
+    ]
 )
-
 
 def parse_args():
     parser = argparse.ArgumentParser(
